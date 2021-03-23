@@ -1,0 +1,71 @@
+
+
+
+<!-- <div class="input">
+    <input type="text" placeholder="Your Task here !" [value]="intitle" #title>
+    <input type="radio" id="comp" name="iscompleted" value="completed" #comp >
+    <label for="comp" >Done</label>
+    <input type="radio" id="ncomp" name="iscompleted" value="notcompleted">
+    <label for="ncomp" >Not Yet</label>
+    <button (click)="EditorAdd(title.value,comp.checked)">ADD</button>
+
+</div> -->
+
+
+
+
+  
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Add Task</mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Title of your task" [value]="intitle" #title>
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+      </form>
+    
+      <div>
+        <label>Task Status: </label>
+        <mat-radio-group >
+          <mat-radio-button value="completed" #comp>Completed </mat-radio-button>
+          <mat-radio-button value="always">Todo</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="EditorAdd(title.value,comp.checked)" mat-raised-button color="primary" aria-label="Example icon button with a home icon">
+        
+        Add
+      </button>
+      <button mat-raised-button color="primary" >Add Using Http </button>
+    </mat-card-actions>
+  </mat-card>
+
+
+
+<div class="tasks" *ngFor="let task of tasks" >
+  <mat-card [ngClass]="colorchange(task.completed)" class="card">
+    <mat-checkbox color="primary" (change)="onToggle(task.id)" ></mat-checkbox>
+
+    {{task.title}}
+    <div  class="button">
+      
+      <button mat-raised-button class="edit" (click)="onEdit(task)">Edit</button>
+      <button mat-raised-button color="warn" class="delete" (click)="onDelete(task.id)">x</button>
+        
+    </div>
+  </mat-card>
+</div>

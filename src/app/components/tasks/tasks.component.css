@@ -1,0 +1,58 @@
+.tasks{
+    margin:10px auto 0 auto;
+    width: 80%;
+   
+}
+
+.button .edit{
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.bg-comp{
+    background-color: rgb(122, 212, 122);
+    border: green solid;
+    color: white;
+}
+
+.bg-ncomp{
+    background-color: rgb(252, 166, 166);
+    border: rgb(243, 112, 112) solid;
+    color: white;
+}
+
+
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+  .example-card {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    border: midnightblue solid;
+  }
+  
+  .example-header-image {
+    
+    background-size: cover;
+  }
+
+
+  .card{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
