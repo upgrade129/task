@@ -37,23 +37,21 @@
     
       <div>
         <label>Task Status: </label>
-        <mat-radio-group >
-          <mat-radio-button value="completed" #comp>Completed </mat-radio-button>
-          <mat-radio-button value="always">Todo</mat-radio-button>
+        <mat-radio-group [value]="optcomplete" >
+          <mat-radio-button value="true" #comp>Completed </mat-radio-button>
+          <mat-radio-button value="false" >Todo</mat-radio-button>
         </mat-radio-group>
       </div>
-      
-      
+     
     </mat-card-content>
     <mat-card-actions>
       <button (click)="EditorAdd(title.value,comp.checked)" mat-raised-button color="primary" aria-label="Example icon button with a home icon">
         
         Add
       </button>
-      <button mat-raised-button color="primary" >Add Using Http </button>
+      <button (click)="getTaskHttp()" mat-raised-button color="primary" >Add Using Http </button>
     </mat-card-actions>
   </mat-card>
-
 
 
 <div class="tasks" *ngFor="let task of tasks" >

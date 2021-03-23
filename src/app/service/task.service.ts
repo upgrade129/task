@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../module/task/task.module';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +8,7 @@ import { Task } from '../module/task/task.module';
 
 
 export class TaskService {
-  constructor( ) { }
+  constructor( private http:HttpClient) { }
 
   TaskData :Task[]= [
     {
@@ -103,6 +103,12 @@ export class TaskService {
 
     updateTask(utask){
       this.TaskData=utask
+    }
+
+    getTaskFromHttp(){
+      let url= "https://jsonplaceholder.typicode.com/todos?_limit=2"
+      return(this.http.get(url))
+      
     }
 
   

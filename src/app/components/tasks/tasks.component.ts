@@ -17,14 +17,18 @@ export class TasksComponent implements OnInit {
   Edit=false
   EditId
   EditUserId
+  optcomplete
 
   floatLabelControl = new FormControl('auto');
 
   constructor(private Taskservice : TaskService) { }
 
   ngOnInit(): void {
-    this.tasks = this.Taskservice.getTasks();
+    this.onstart()
     console.log("tasks",this.tasks)
+  }
+  onstart(){
+    this.tasks = this.Taskservice.getTasks();
   }
   
   colorchange(taskstatus){
@@ -56,6 +60,7 @@ export class TasksComponent implements OnInit {
     this.Edit=true
     this.EditUserId=task.userId
     this.EditId = task.id
+    this.optcomplete = false
   }
 
   EditorAdd(tit,comp){
@@ -124,6 +129,13 @@ export class TasksComponent implements OnInit {
     }
     console.log("addtask",addtask[0].id)
     this.Taskservice.updateTask(this.tasks)
+    
+  }
+
+  getTaskHttp(){
+    this.Taskservice.getTaskFromHttp().subscribe((data:Task[])=>{
+      this.tasks =  [...this.tasks,...data]
+    })
     
   }
 

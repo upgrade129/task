@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material//icon'
 import { MatInputModule } from '@angular/material/input'
 import {MatCardModule} from '@angular/material/card';
 
+import { HttpClientModule } from '@angular/common/http'
+
 
 
 const Styles = [MatButtonModule,MatCardModule,MatInputModule,MatIconModule,MatFormFieldModule,MatRadioModule,MatCheckboxModule]
@@ -26,7 +28,8 @@ const Styles = [MatButtonModule,MatCardModule,MatInputModule,MatIconModule,MatFo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    Styles
+    Styles,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
